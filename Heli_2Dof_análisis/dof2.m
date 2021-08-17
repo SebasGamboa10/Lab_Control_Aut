@@ -17,13 +17,6 @@ dX=diff(Xcm, t);
 dY=diff(Ycm, t);
 dZ=diff(Zcm, t);
 
-%dX= diff(Xcm,th)+diff(Xcm,fi);
-%dY= diff(Ycm,th)+diff(Ycm,fi);
-%dZ= diff(Zcm,th)+diff(Zcm,fi);
-%dX= diff(diff(Xcm,th),fi);
-%dY= diff(diff(Ycm,th),fi);
-%dZ= diff(diff(Zcm,th),fi);
-
 %%%%%%%%%Lagrange%%%%%%%%%%%%%
 %Energía cinética
 Trp = (1/2)*Jeqp*(dth)^2;
