@@ -68,9 +68,9 @@ m = 1.3872; %kg
 %Definiendo pasos intermedios de simplificación
 
 alpha = (Jeqp + m*((lmc)^2+(h)^2));
-beta = m*(((sen(2*th)*((lmc)^2-(h)^2))/2)-lmc*h*cos(2*th));
-psi = m*(lmc*cos(th)+h*sen(th));
-rho = (Jeqy + m*(((cos(th))^2)*(lmc)^2-(h)^2)+lmc*h*(sen(2*th))+h^2));
+beta = m*(((sin(2*th)*((lmc)^2-(h)^2))/2)-lmc*h*cos(2*th));
+psi = m*(lmc*cos(th)+h*sin(th));
+rho = (Jeqy + m*(((cos(th))^2)*(lmc)^2-(h)^2)+lmc*h*(sin(2*th))+h^2);
 
 %Definiendo matrices
 
