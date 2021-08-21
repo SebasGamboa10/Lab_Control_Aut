@@ -47,3 +47,28 @@ Q2= ty-By*dfi;
 %Euler-Lagrange
 diff(diff(L,dth),t) - diff(L,th) == Q1;
 diff(diff(L,dfi),t) - diff(L,fi) == Q2;
+
+%%%%%%%%%%%%%%%%%%% Modelo Espacio de Estados %%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Definiendo constantes
+
+Fcpp = Fcpy = Fcyp = Fcyy = 0;
+Kpp = 0.02638; %N.m/V
+Kpy = 0.00189; %N.m/V
+Kyp = 0.002096; %N.m/V
+Kyy = 0.01871; %N.m/V
+Bp = 0.01325; %N/V
+By = 0.8513; %N/V
+Jeqp = 0.0332; %kg.m^2
+Jeqy = 0.0371; %kg.m^2
+lmc = 0.0122; %m
+h = 0.00714; %m
+m = 1.3872; %kg
+
+%Definiendo pasos intermedios de simplificación
+
+%Definiendo matrices
+
+A= [0 0 1 0; 0 0 0 1; ]
+
+
