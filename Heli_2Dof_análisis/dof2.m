@@ -52,7 +52,7 @@ diff(diff(L,dfi),t) - diff(L,fi) == Q2;
 
 %Definiendo constantes
 
-Fcpp = Fcpy = Fcyp = Fcyy = 0;
+Fcpp = 0; Fcpy = 0; Fcyp = 0; Fcyy = 0;
 Kpp = 0.02638; %N.m/V
 Kpy = 0.00189; %N.m/V
 Kyp = 0.002096; %N.m/V
@@ -67,8 +67,14 @@ m = 1.3872; %kg
 
 %Definiendo pasos intermedios de simplificación
 
+alpha = (Jeqp + m*((lmc)^2+(h)^2));
+beta = m*(((sen(2*th)*((lmc)^2-(h)^2))/2)-lmc*h*cos(2*th));
+psi = m*(lmc*cos(th)+h*sen(th));
+rho = (Jeqy + m*(((cos(th))^2)*(lmc)^2-(h)^2)+lmc*h*(sen(2*th))+h^2));
+
 %Definiendo matrices
 
-A= [0 0 1 0; 0 0 0 1; ]
-
-
+A = [0 0 1 0; 0 0 0 1; 0 0 (-Bp/alpha) 0; 0 0 0 (-By/rho)];
+B =[0 0; 0 0; (Kpp/alpha) (Kpy/alpha); (Kyp*cos(th)/rho) (Kyp*cos(th)/rho)];
+C = [1 0 0 0; 0 1 0 0];
+D = 0;
