@@ -66,15 +66,28 @@ h = 0.00714; %m
 m = 1.3872; %kg
 
 %Definiendo pasos intermedios de simplificación
+%Aproximando sen(th)=0 y cos(th)=1;
+
+%alpha = (Jeqp + m*((lmc)^2+(h)^2));
+%beta = m*(((sin(2*th)*((lmc)^2-(h)^2))/2)-lmc*h*cos(2*th));
+%psi = m*(lmc*cos(th)+h*sin(th));
+%rho = (Jeqy + m*(((cos(th))^2)*(lmc)^2-(h)^2)+lmc*h*(sin(2*th))+h^2);
 
 alpha = (Jeqp + m*((lmc)^2+(h)^2));
-beta = m*(((sin(2*th)*((lmc)^2-(h)^2))/2)-lmc*h*cos(2*th));
-psi = m*(lmc*cos(th)+h*sin(th));
-rho = (Jeqy + m*(((cos(th))^2)*(lmc)^2-(h)^2)+lmc*h*(sin(2*th))+h^2);
+beta = m*(((0*((lmc)^2-(h)^2))/2)-lmc*h*0);
+psi = m*(lmc*1+h*0);
+rho = (Jeqy + m*(((1)^2)*(lmc)^2-(h)^2)+lmc*h*(0)+h^2);
+
 
 %Definiendo matrices
 
 A = [0 0 1 0; 0 0 0 1; 0 0 (-Bp/alpha) 0; 0 0 0 (-By/rho)];
-B =[0 0; 0 0; (Kpp/alpha) (Kpy/alpha); (Kyp*cos(th)/rho) (Kyp*cos(th)/rho)];
+B = [0 0; 0 0; (Kpp/alpha) (Kpy/alpha); (Kyp*1/rho) (Kyp*1/rho)];
 C = [1 0 0 0; 0 1 0 0];
 D = 0;
+
+%Definiendo sistemas
+Sistema = ss(A, B, C, D);
+
+step(Sistema)
+
