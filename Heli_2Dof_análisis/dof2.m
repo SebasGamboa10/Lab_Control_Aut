@@ -64,6 +64,7 @@ Jeqy = 0.0371; %kg.m^2
 lmc = 0.0122; %m
 h = 0.00714; %m
 m = 1.3872; %kg
+g = 9.8; %m/s^2
 
 %Definiendo pasos intermedios de simplificación
 %Aproximando sen(th)=0 y cos(th)=1;
@@ -73,6 +74,7 @@ m = 1.3872; %kg
 %psi = m*(lmc*cos(th)+h*sin(th));
 %rho = (Jeqy + m*(((cos(th))^2)*(lmc)^2-(h)^2)+lmc*h*(sin(2*th))+h^2);
 
+x = m*g*(lmc*0 - h*1);
 alpha = (Jeqp + m*((lmc)^2+(h)^2));
 beta = m*(((0*((lmc)^2-(h)^2))/2)-lmc*h*0);
 psi = m*(lmc*1+h*0);
@@ -81,8 +83,8 @@ rho = (Jeqy + m*(((1)^2)*(lmc)^2-(h)^2)+lmc*h*(0)+h^2);
 
 %Definiendo matrices
 
-A = [0 0 1 0; 0 0 0 1; 0 0 (-Bp/alpha) 0; 0 0 0 (-By/rho)];
-B = [0 0; 0 0; (Kpp/alpha) (Kpy/alpha); (Kyp*1/rho) (Kyp*1/rho)];
+A = [0 0 1 0; 0 0 0 1; (x/alpha) 0 (-Bp/alpha) 0; 0 0 0 (-By/rho)];
+B = [0 0; 0 0; (Kpp/alpha) (Kpy/alpha); (Kyp*1/rho) (Kyy*1/rho)];
 C = [1 0 0 0; 0 1 0 0];
 D = 0;
 
