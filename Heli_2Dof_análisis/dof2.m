@@ -93,3 +93,5 @@ Sistema = ss(A, B, C, D);
 
 step(Sistema)
 
+%impulse(Sistema)
+
