@@ -22,18 +22,17 @@ u5=u4-2;
 P=[u1, u2, u3, u4, u5];
 
 M_crt = [A B;-C 0]
-%deter = det(M_crt)
-%rank(M_crt)
+deter = det(M_crt)
+rank
 
 
 A_t = [A [0;0;0;0];-C [0]]
 B_t = [B;0]
-M=[B_t (A_t*B_t) ((A_t^2)*B_t) ((A_t^3)*B_t) ((A_t^4)*B_t)]
-%det(M)
+M=[B_t (A_t*B_t) ((A_t^2)*B_t) ((A_t^3)*B_t)]
 
 %Sacando K, y ki
 Ks = place(A_t, B_t,P)
 
-K_REI=[Ks(:,1) Ks(:,2) Ks(:,3) Ks(:,4)]
-Ki_REI = -Ks(:,5)
+K_REI=[Ks(:,1) Ks(:,2)]
+Ki_REI = -Ks(:,3)
 
