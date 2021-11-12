@@ -5,8 +5,8 @@ B = Heli_ss.B;
 C = Heli_ss.C;
 D = Heli_ss.D;
 
-Q = [800 0 0 0 0 0; 0 200 0 0 0 0; 0 0 200 0 0 0; 0 0 0 1 0 0; 0 0 0 0 1 0;0 0 0 0 0 100];
-R = 1;
+Q = [1 0 0 0 0 0; 0 1 0 0 0 0; 0 0 1 0 0 0; 0 0 0 1 0 0; 0 0 0 0 20 0;0 0 0 0 0 50];
+R = [1/15 0; 0 1/10];
 
 %K = lqr(A,B,Q,R);
 
@@ -20,6 +20,6 @@ Ks = lqr(As,Bs,Q,R)
 
 %Siempre hay que analizar el caso
 K_LQR = Ks(:,[1:4])
-Ki_LQR = -Ks(:,[5])
+Ki_LQR = -Ks(:,[5:6])
 
 
